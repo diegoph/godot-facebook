@@ -19,4 +19,7 @@ In case you are using more than one module just separate them with a comma, here
 ```
 [android]
 
-modules="org/godotengine/godot/GodotAdMob,org/godotengine/godot/GodotFacebook"```
+modules="org/godotengine/godot/GodotAdMob,org/godotengine/godot/GodotFacebook"
+```
+
+## API
