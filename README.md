@@ -7,15 +7,15 @@
 1. Compile the Godot Android template [like you'll normally would](http://docs.godotengine.org/en/latest/development/compiling/compiling_for_android.html)
 1. You'll find your APK in `godot/bin` then [you must reference them on your Godot project](http://docs.godotengine.org/en/latest/development/compiling/compiling_for_android.html#using-the-export-templates)
 1. Be sure to edit your `project.godot` and add this line:
-`
-[android]
+
+```[android]
 
 modules="org/godotengine/godot/GodotFacebook"
-`
+```
 In case you are using more than one module just separate them with a comma, here's an example:
 
-`
+```
 [android]
 
 modules="org/godotengine/godot/GodotAdMob,org/godotengine/godot/GodotFacebook"
-`
+```
