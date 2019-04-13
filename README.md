@@ -1,3 +1,1 @@
-# godot-facebook
-
-Facebook module for Godot V3.1
+# Facebook Module for Godot 3.1 (Android)
