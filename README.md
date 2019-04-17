@@ -31,7 +31,7 @@ modules="org/godotengine/godot/GodotAdMob,org/godotengine/godot/GodotFacebook"
 * isLoggedIn
 
 ### Callback functions
-* login_success(token, user_data) - `user_data` is JSON string with (id, name, email, gender, birthday)
+* login_success(token)
 * login_cancelled()
 * login_failed(error)
 * is_logged_in(is_logged, msg) - `is_logged` is a string with value of "true" or "false"
