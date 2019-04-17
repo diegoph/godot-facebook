@@ -48,27 +48,8 @@ public class GodotFacebook extends Godot.SingletonBase {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override
                 public void onSuccess(LoginResult loginResult) {
-                    final AccessToken at = loginResult.getAccessToken();
-
-                    GraphRequest request = GraphRequest.newMeRequest(
-                        loginResult.getAccessToken(),
-                        new GraphRequest.GraphJSONObjectCallback() {
-                            @Override
-                            public void onCompleted(JSONObject object, GraphResponse response) {
-                                if (response.getError() != null) {
-                                    GodotLib.calldeferred(facebookCallbackId, "login_failed", new Object[]{"Failed to fetch user data"});
-                                }
-                                else {
-                                    userData = object;
-                                    GodotLib.calldeferred(facebookCallbackId, "login_success", new Object[]{at.getToken(), userData.toString()});
-                                }
-                            }
-                        });
-
-                    Bundle parameters = new Bundle();
-                    parameters.putString("fields", "id,name,email,gender,birthday");
-                    request.setParameters(parameters);
-                    request.executeAsync();
+                    AccessToken at = loginResult.getAccessToken();
+                    GodotLib.calldeferred(facebookCallbackId, "login_success", new Object[]{at.getToken()});
                 }
 
                 @Override
