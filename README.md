@@ -50,14 +50,8 @@ func _on_BtnLogin_pressed():
 	if fb != null:
 		fb.login()
 	
-func login_success(token, user_data):
+func login_success(token):
 	print_debug(token)
-	print_debug(user_data)
-	var user_parse = JSON.parse(user_data)
-	if user_parse.error == OK:
-		var user_result = user_parse.result
-		# success when converting string to JSON
-		print_debug(user_result.name)
 
 func login_cancelled():
 	print_debug("Login canceled")
