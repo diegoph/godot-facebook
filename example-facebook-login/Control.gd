@@ -7,13 +7,8 @@ func _ready():
 		fb = Engine.get_singleton("GodotFacebook")
 		fb.init(get_instance_id())
 	
-func login_success(token, user_data):
+func login_success(token):
 	print_debug(token)
-	var user_parse = JSON.parse(user_data)
-	if user_parse.error == OK:
-		var user_result = user_parse.result
-		# success when converting string to JSON
-		print_debug(user_result.name)
 
 func login_cancelled():
 	print_debug("Login canceled")
